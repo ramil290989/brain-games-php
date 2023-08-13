@@ -1,0 +1,19 @@
+{
+    "name": "hexlet/code",
+    "description": "brain-games",
+    "type": "project",
+    "license": "free",
+    "autoload": {
+        "psr-4": {
+            "Hexlet\\Code\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Garifullin Ramil",
+            "email": "garifullinramil290989@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
