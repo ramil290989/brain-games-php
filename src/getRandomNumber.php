@@ -14,12 +14,12 @@ namespace Project\Src\GetRandomNumber;
 /**
  * Функция генерации случайного числа, возвращает случайное число
  * 
- * @return number
+ * @param $min - минимальное число
+ * @param $max - максимальное число
+ * 
+ * @return int случайное число
  */
-function getRandomNumber()
+function getRandomNumber($min, $max)
 {
-    $min = 0;
-    $max = 10;
-
     return rand($min, $max);
 }

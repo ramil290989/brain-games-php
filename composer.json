@@ -9,7 +9,8 @@
             "src/getRandomNumber.php",
             "src/getRoundsCount.php",
             "src/getMessages.php",
-            "src/games/even.php"
+            "src/games/even.php",
+            "src/games/calc.php"
         ]
     },
     "authors": [

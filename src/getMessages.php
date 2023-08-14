@@ -21,18 +21,22 @@ namespace Project\Src\GetMessages;
  */
 function getMessages($gameName)
 {
-    $gameRule = "";
-
-    switch ($gameName) {
-    case "even":
-        $gameRule = "Отвечай \"да\" если число четное, если число нечетное отвечай \"нет\".\n";
-        break;
-    }
-
     $messages = array(
-        "gameRule" => $gameRule,
-        "question" => function ($number) {
-            return "Число {$number} четное?\nОтвет: ";
+        "gameRule" => function ($gameName) {
+            switch ($gameName) {
+            case "even":
+                return "Отвечай \"да\" если число четное, если число нечетное отвечай \"нет\".\n";
+            case "calc":
+                return "Реши пример и введи ответ.\n";
+            }
+        },
+        "question" => function ($expression, $gameName) {
+            switch ($gameName) {
+            case "even":
+                return "Число {$expression} четное?\nОтвет: ";
+            case "calc":
+                return "Реши пример: {$expression} = ";
+            }
         },
         "loss" => function ($userAnswer, $correctAnswer, $userName) {
             return "'{$userAnswer}' неправильный ответ, правильный ответ '{$correctAnswer}'.\nПопробуй еще раз, ${userName}.\n";
