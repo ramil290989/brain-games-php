@@ -28,6 +28,8 @@ function getMessages($gameName)
                 return "Отвечай \"да\" если число четное, если число нечетное отвечай \"нет\".\n";
             case "calc":
                 return "Реши пример и введи ответ.\n";
+            case "gcd":
+                return "Найди наибольший общий делитель двух чисел и введи ответ.\n";
             }
         },
         "question" => function ($expression, $gameName) {
@@ -36,6 +38,8 @@ function getMessages($gameName)
                 return "Число {$expression} четное?\nОтвет: ";
             case "calc":
                 return "Реши пример: {$expression} = ";
+            case "gcd":
+                return "Наибольший общий делитель чисел {$expression}: ";
             }
         },
         "loss" => function ($userAnswer, $correctAnswer, $userName) {

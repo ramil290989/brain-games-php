@@ -12,6 +12,6 @@
  */
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use function Project\Src\Games\Calc\runCalcGame;
+use function Project\Src\Index\runGame;
 
-runCalcGame();
+runGame("calc");

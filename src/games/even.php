@@ -13,35 +13,18 @@ namespace Project\Src\Games\Even;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
 
-use function Project\Src\Greeting\greeting;
-use function Project\Src\GetRoundsCount\getRoundsCount;
 use function Project\Src\GetRandomNumber\getRandomNumber;
-use function Project\Src\GetMessages\getMessages;
 
 /**
- * Функция запуска игры
+ * Функция возвращает параметры для игры определения четности числа
  * 
- * @return ничего не возвращает
+ * @return возвращает выражение для формирования вопроса и правильный ответ
  */
-function runEvenGame()
+function getEvenGameParams()
 {
-    $gameName = "even";
-    $roudsCount = getRoundsCount();
-    $messages = getMessages($gameName);
-    $userName = greeting();
-    print_r($messages["gameRule"]($gameName));
-    
-    for ($i = 1; $i <= $roudsCount; $i += 1) {
-        [$minNumber, $maxNumber] = [0, 10];
-        $num = getRandomNumber($minNumber, $maxNumber);
-        $correctAnswer = $num % 2 === 0 ? "да" : "нет";
-        print_r($messages["question"]($num, $gameName));
-        $userAnswer = mb_substr(fgets(STDIN), 0, -1);
-        if ($userAnswer !== $correctAnswer) {
-            print_r($messages["loss"]($userAnswer, $correctAnswer, $userName));
-            return;
-        }
-        print_r($messages["correct"]);
-    }
-    print_r($messages["win"]($userName));
+    [$minNumber, $maxNumber] = [0, 10];
+    $num = getRandomNumber($minNumber, $maxNumber);
+    $expression = "{$num}";
+    $correctAnswer = $num % 2 === 0 ? "да" : "нет";
+    return [$expression, $correctAnswer];
 }

@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
 /**
- * Исполняемый файл игры проверки числа на четность
+ * Исполняемый файл игры нахождения наибольшего общего делителя
  * php version 8.1.2
  * 
  * @category Run
@@ -14,4 +14,4 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 use function Project\Src\Index\runGame;
 
-runGame("even");
+runGame("gcd");

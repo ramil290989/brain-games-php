@@ -5,12 +5,15 @@
     "license": "free",
     "autoload": {
         "files": [
+            
+            "src/index.php",
             "src/greeting.php",
             "src/getRandomNumber.php",
             "src/getRoundsCount.php",
             "src/getMessages.php",
             "src/games/even.php",
-            "src/games/calc.php"
+            "src/games/calc.php",
+            "src/games/gcd.php"
         ]
     },
     "authors": [
