@@ -19,6 +19,7 @@ use function Project\Src\GetMessages\getMessages;
 use function Project\Src\Games\Even\getEvenGameParams;
 use function Project\Src\Games\Calc\getCalcGameParams;
 use function Project\Src\Games\Gcd\getGcdGameParams;
+use function Project\Src\Games\Progression\getProgressionGameParams;
 
 /**
  * Функция запуска игры
@@ -39,6 +40,7 @@ function runGame($gameName)
             "even" => getEvenGameParams(),
             "calc" => getCalcGameParams(),
             "gcd" => getGcdGameParams(),
+            "progression" => getProgressionGameParams(),
         ];
         [$expression, $correctAnswer] = $gameParams[$gameName];
         print_r($messages["question"]($expression, $gameName));

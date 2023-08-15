@@ -30,6 +30,8 @@ function getMessages($gameName)
                 return "Реши пример и введи ответ.\n";
             case "gcd":
                 return "Найди наибольший общий делитель двух чисел и введи ответ.\n";
+            case "progression":
+                return "Найди пропущенное число в арифметической прогрессии.\n";
             }
         },
         "question" => function ($expression, $gameName) {
@@ -40,6 +42,8 @@ function getMessages($gameName)
                 return "Реши пример: {$expression} = ";
             case "gcd":
                 return "Наибольший общий делитель чисел {$expression}: ";
+            case "progression":
+                return "{$expression}\nпропущено число: ";
             }
         },
         "loss" => function ($userAnswer, $correctAnswer, $userName) {
